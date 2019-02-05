@@ -7,10 +7,9 @@
 <body>
 <div>
     <div class='center'>
-        <div class='title'>Classify Bear Images 🐻</div>
+        <div class='title'>City scapes segmentation demo</div>
         <p>
-            Use images of <strong>teddy</strong> bears, <strong>black</strong> bears, <strong>grizzly</strong> bears, or
-            all three!
+            Select Urban street image to start.. 
         </p>
         <div class='content'>
             <div class='no-display'>
@@ -29,10 +28,19 @@
                 <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
             </div>
             <div class='analyze'>
-                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Segment</button>
             </div>
             <div class='result-label'>
                 <label id='result-label'></label>
+            </div>
+
+            <div >
+                <img id='result-img' src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="  height="0" alt="" />
+                <!--<img  src="../static/mask.png" height="200" alt="" />-->
+
+             </div>
+            <div class="result-label">
+                Inspired by : https://course.fast.ai/deployment_google_app_engine.html
             </div>
         </div>
     </div>

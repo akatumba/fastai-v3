@@ -16,7 +16,7 @@ function analyze() {
     var uploadFiles = el('file-input').files;
     if (uploadFiles.length != 1) alert('Please select 1 file to analyze!');
 
-    el('analyze-button').innerHTML = 'Analyzing...';
+    el('analyze-button').innerHTML = 'Segmenting...';
     var xhr = new XMLHttpRequest();
     var loc = window.location
     xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
@@ -25,8 +25,10 @@ function analyze() {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
             el('result-label').innerHTML = `Result = ${response['result']}`;
+            el('result-img').src =  `../static/${response['result']}`;
+            el('result-img').height='200';
         }
-        el('analyze-button').innerHTML = 'Analyze';
+        el('analyze-button').innerHTML = 'Segment Image';
     }
 
     var fileData = new FormData();
